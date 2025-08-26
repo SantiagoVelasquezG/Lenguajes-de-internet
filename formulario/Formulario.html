@@ -8,10 +8,27 @@
 
 <form action="/enviar" method="post">
     <label for="nombre">Nombre:</label><br>
-    <input type="text" id="nombre" name="nombre"><br><br>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+
+    <label for="edad">Edad:</label><br>
+    <input type="number" id="edad" name="edad" min="1" max="120" required><br><br>
+
+    <label for="sexo">Sexo:</label><br>
+    <select id="sexo" name="sexo" required>
+        <option value="">--Seleccione--</option>
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+        <option value="otro">Otro</option>
+    </select><br><br>
 
     <label for="email">Correo electrónico:</label><br>
-    <input type="email" id="email" name="email"><br><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="telefono">Teléfono:</label><br>
+    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" placeholder="Ej: 3001234567"><br><br>
+
+    <label for="direccion">Dirección:</label><br>
+    <input type="text" id="direccion" name="direccion"><br><br>
 
     <label for="mensaje">Mensaje:</label><br>
     <textarea id="mensaje" name="mensaje"></textarea><br><br>
