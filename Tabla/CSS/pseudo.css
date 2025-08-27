@@ -1,3 +1,13 @@
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
@@ -5,24 +15,28 @@ table {
 
 td {
   border: 1px solid black;
-  width: 50px;
-  height: 60px;
+  width: 5.5%; 
+  height: 70px;
+  vertical-align: middle;
+}
+.element {
+  font-size: 14px;
+  font-weight: bold;
   text-align: center;
-  font-family: Arial;
+  padding: 5px;
 }
 
-.elemento {
-  background-color: lightgray;
-}
+.hidrogeno { background-color: #ffcccc; }
+.gas-noble { background-color: #ccffff; }
+.alcalino { background-color: #ffebcc; }
+.alcalinoterreo { background-color: #ffffcc; }
+.metaloide { background-color: #e6ccff; }
+.no-metal { background-color: #ccffcc; }
+.halogenos { background-color: #ffccff; }
+.metal { background-color: #cccccc; }
 
-.no-metal { background-color: lightgreen; }
-.gas-noble { background-color: lightblue; }
-.alcalino { background-color: pink; }
-.alcalinotermetal { background-color: yellow; }
-.metaloide { background-color: orange; }
-.halogeno { background-color: violet; }
-
-.elemento:hover {
+.element:hover {
   background-color: black;
   color: white;
+  transform: scale(1.1);
 }
