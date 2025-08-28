@@ -1,11 +1,25 @@
-
 body {
   font-family: Arial, sans-serif;
   text-align: center;
 }
+.num {
+    font-size: 10px;
+    text-align: left;
+}
+.sim {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.name {
+    font-size: 9px;
+    text-align: left;
+}
 
 h1 {
-  margin-bottom: 20px;
+  margin-bottom: 20px
+  color #036031;
 }
 
 table {
@@ -33,10 +47,15 @@ td {
 .metaloide { background-color: #e6ccff; }
 .no-metal { background-color: #ccffcc; }
 .halogenos { background-color: #ffccff; }
-.metal { background-color: #cccccc; }
-
+.metal { background-color: #88d0da; }
+.lantanido {
+  background-color: #a772a0; 
+}
+.actinido {
+  background-color: #bb7ab5; 
+}
 .element:hover {
   background-color: black;
-  color: white;
+  color: rgb(255, 254, 254);
   transform: scale(1.1);
 }
