@@ -1,0 +1,113 @@
+/* Fuente y colores generales */
+body {
+  font-family: "Times New Roman"; 
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+/* Introducción */
+.intro p {
+  font-size: 1.5rem;      /* Texto más grande */
+  font-weight: bold;      /* Negrilla */
+  color: #1e3a8a;         /* Azul oscuro */
+  background-color: #e0e7ff; /* Fondo clarito azul */
+  padding: 1rem 2rem;     /* Espaciado interno */
+  border-radius: 10px;    /* Bordes redondeados */
+  display: inline-block;  /* Para que el recuadro se ajuste al texto */
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+/* Encabezado */
+header {
+  background-color: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+
+nav {
+  background-color: #3b82f6;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+nav ul li {
+  margin: 0 15px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Introducción */
+.intro {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+/* Tabla de noticias */
+.tabla-noticias {
+  padding: 1.5rem;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+table th {
+  background-color: #1e40af;
+  color: white;
+}
+table tr:hover {
+  background-color: #e5e7eb;
+}
+
+/* Tarjetas */
+.Tarjetas-de-noticias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem;
+}
+.card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.card img {
+  width: 100%;
+  height: auto;
+}
+.card p {
+  padding: 1rem;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Pie de página */
+footer {
+  background-color: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
