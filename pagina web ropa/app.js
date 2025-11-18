@@ -9,7 +9,6 @@ const DESCRIPCIONES = {
   sportswear: 'Ropa deportiva oficial para fanáticos del fútbol.'
 };
 
-
 // Estado global
 const state = {
   productos: [],
@@ -17,7 +16,7 @@ const state = {
   usuario: null // { username, token }
 };
 
-// Formateador de precio (opcional)
+// Formateador de precio
 const fmtPrecio = (v) => `$${Number(v).toFixed(2)}`;
 
 // Objeto carrito
@@ -95,7 +94,6 @@ const carrito = {
     countEl.textContent = this.items.reduce((acc, i) => acc + i.qty, 0);
     totalEl.textContent = fmtPrecio(this.calcularTotal());
 
-    // Delegación de eventos
     cont.querySelectorAll('.qty-btn, .danger').forEach(btn => {
       const action = btn.dataset.action;
       const id = Number(btn.dataset.id);
@@ -114,8 +112,7 @@ async function cargarProductos() {
     const res = await fetch(API_URL);
     if (!res.ok) throw new Error('Error al cargar productos');
     const data = await res.json();
-    // Combina API + productos extra
-    state.productos = [...data, ...productosExtra];
+    state.productos = data; // ← corregido aquí
     renderProductos();
   } catch (err) {
     document.getElementById('catalogo-productos').innerHTML =
@@ -155,7 +152,6 @@ function renderProductos() {
     cont.appendChild(card);
   });
 
-  // Listeners de añadir
   cont.querySelectorAll('button.primary').forEach(btn => {
     btn.onclick = () => {
       const id = Number(btn.dataset.id);
@@ -196,7 +192,7 @@ function setupCartActions() {
     if (!state.usuario) return alert('Inicia sesión para finalizar la compra.');
     alert(`Gracias, ${state.usuario.username}. Total: ${fmtPrecio(carrito.calcularTotal())}.`);
     carrito.vaciar();
-  };
+   };
 }
 
 // Login
@@ -216,15 +212,15 @@ function setupLogin() {
     errorEl.hidden = true;
 
     try {
-      const res = await fetch('https://fakestoreapi.com/auth/login', {
+      const res = await fetch('https://dummyjson.com/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
       });
       if (!res.ok) throw new Error('Credenciales inválidas');
       const data = await res.json();
-      state.usuario = { username, token: data.token };
-      userStatus.textContent = username;
+      state.usuario = { username: data.username, token: data.token };
+      userStatus.textContent = data.username;
       modal.close();
     } catch (err) {
       errorEl.textContent = 'Usuario o contraseña incorrectos.';
@@ -232,6 +228,7 @@ function setupLogin() {
     }
   });
 }
+
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
