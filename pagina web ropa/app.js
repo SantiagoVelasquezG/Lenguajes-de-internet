@@ -9,32 +9,6 @@ const DESCRIPCIONES = {
   sportswear: 'Ropa deportiva oficial para fanáticos del fútbol.'
 };
 
-const productosExtra = [
-  {
-    id: 1001,
-    title: 'Camiseta Selección Colombia 2025',
-    price: 89.99,
-    category: 'sportswear',
-    image: 'assets/images.jpeg',
-    descPersonalizada: 'Orgullo colombiano en cada partido. Diseño oficial con tecnología transpirable.'
-  },
-  {
-    id: 1002,
-    title: 'Camiseta FC Barcelona 2025',
-    price: 94.50,
-    category: 'sportswear',
-    image: 'assets/Barselona.jpeg',
-    descPersonalizada: 'Pasión azulgrana. Diseño Nike con patrocinador oficial y franjas clásicas.'
-  },
-  {
-    id: 1003,
-    title: 'Camiseta Real Madrid 2025',
-    price: 92.00,
-    category: 'sportswear',
-    image: 'assets/Madrid.jpeg',
-    descPersonalizada: 'Elegancia blanca. Jersey oficial con tecnología Aeroready y detalles en negro.'
-  }
-];
 
 // Estado global
 const state = {
