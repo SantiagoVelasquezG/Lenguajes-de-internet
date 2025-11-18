@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tienda Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Tienda De Todo</h1>
+    <div class="topbar-actions">
+      <label class="switch">
+        <input type="checkbox" id="toggle-dark" />
+        <span>Modo oscuro</span>
+      </label>
+      <span id="user-status">Invitado</span>
+      <button id="btn-login">Iniciar sesión</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="productos">
+      <div class="productos-header">
+        <h2>Productos</h2>
+        <input id="search-input" type="search" placeholder="Buscar producto..." />
+      </div>
+      <div id="catalogo-productos" class="grid"></div>
+    </section>
+
+    <aside class="carrito">
+      <div class="carrito-header">
+        <h2>Carrito (<span id="cart-count">0</span>)</h2>
+      </div>
+      <div id="carrito-items" class="carrito-items">Tu carrito está vacío.</div>
+      <div class="carrito-footer">
+        <p>Total: <strong id="cart-total">$0.00</strong></p>
+        <div class="carrito-actions">
+          <button id="btn-empty">Vaciar carrito</button>
+          <button id="btn-checkout">Finalizar compra</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Modal de inicio de sesión -->
+  <dialog id="login-modal" class="modal">
+    <form method="dialog" id="login-form" class="modal-content">
+      <h3>Iniciar sesión</h3>
+      <p class="hint">Usuario de prueba: emilys / emilyspass</p>
+      <label>Usuario
+        <input type="text" id="login-username" required />
+      </label>
+      <label>Contraseña
+        <input type="password" id="login-password" required />
+      </label>
+      <div class="modal-actions">
+        <button value="cancel">Cancelar</button>
+        <button id="login-submit" value="submit">Entrar</button>
+      </div>
+      <p id="login-error" class="error" hidden></p>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
